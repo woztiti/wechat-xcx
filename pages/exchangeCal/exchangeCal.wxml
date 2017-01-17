@@ -1,0 +1,97 @@
+<view class="containerExchange">
+  <view class="header">
+    <image src="../../dist/image/banner.png"></image>
+  </view>
+  <view class="content">
+    <view class="swiper-tab">
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">买外币</view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">卖外币</view>
+    </view>
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300"  bindchange="bindChange">
+      <swiper-item>
+        <view class="item">
+          <view class="itemLeft">
+          	<picker bindchange="bindPickerBuyChange" value="{{indexBuy}}" range="{{debitArray}}"> 
+          <view class="itemLeftBox">                                
+             <image src="{{debitList[indexBuy].imageurl}}" class="flag"></image>
+                <view class="description-text">
+                  <text>{{debitList[indexBuy].curCode}}</text>
+                </view>           
+          </view>
+           </picker>
+            <picker bindchange="bindNoteSpotChange" value="{{indexSpotNote}}" range="{{noteSpotArray}}">
+          <view class="itemLeftBox">             
+                <image src="{{noteSpot[indexSpotNote].imageurl}}" class="flag" ></image>
+                <view class="description-text">
+                  <text class="">{{noteSpot[indexSpotNote].notespot}}</text>
+                </view>            
+            </view>
+             </picker>
+          </view>
+          <view class="itemRight">
+            <input placeholder="100" type="number" value="{{calResult}}"/>
+            <text>
+              <text class="bgOrange">买入</text>{{debitList[indexBuy].curCodeChinese}}</text>
+          </view>
+        </view>
+        <view class="item">
+          <view class="itemLeft">
+            <view class="itemLeftBox">
+              <image src="../../dist/image/flag/CNY.png" class="flag" ></image>
+              <view class="description-text">
+                <text>CNY</text>
+              </view>
+            </view>
+          </view>
+          <view class="itemRight">
+            <input class="fr" placeholder="1011.88" bindinput="monitorInput" />
+            <text>
+              <text class="bgOrange">支付</text>人民币 </text>
+          </view>
+        </view>
+      </swiper-item>
+
+      <!-- 我是呵呵 -->
+      <swiper-item>
+        <view class="item">
+          <view class="itemLeft">
+            <view class="itemLeftBox">
+              <picker bindchange="bindPickerSellChange" value="{{indexSell}}" range="{{debitArray}}">
+                <image src="{{debitList[indexSell].imageurl}}" class="flag"></image>
+                <view class="description-text">
+                  <text>{{debitList[indexSell].curCode}}</text>
+                </view>
+              </picker>
+            </view>
+            <view class="itemLeftBox">
+              <picker bindchange="bindSpotNoteChange" value="{{indexNoteSpot}}" range="{{noteSpotArray}}">
+                <image src="{{noteSpot[indexSpotNote].imageurl}}" class="flag" ></image>
+                <view class="description-text">
+                  <text class="">{{noteSpot[indexSpotNote].notespot}}</text>
+                </view>
+              </picker>
+            </view>
+          </view>
+          <view class="itemRight">
+            <input class="fr" placeholder="100" bindinput="monitorInput" />
+            <text><text class="bgOrange">卖出</text>{{debitList[indexSell].curCodeChinese}} </text>
+          </view>
+        </view>
+        <view class="item">
+          <view class="itemLeft">
+            <view class="itemLeftBox">
+              <image src="../../dist/image/flag/CNY.png" class="flag"></image>
+                <view class="description-text">
+                   <text>CNY</text>
+                </view>
+            </view>
+          </view>
+          <view class="itemRight">
+            <input placeholder="100.98" value="{{calResult}}" />
+            <text><text class="bgOrange">结算</text>人民币</text>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

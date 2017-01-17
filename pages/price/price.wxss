@@ -1,0 +1,128 @@
+ 
+.index {
+  background-color: #fff;
+  flex: 1; 
+  font-size: 32rpx; 
+  padding-top: 300rpx;
+  position:absolute;
+  top:0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+  box-sizing: border-box;
+} 
+.top{
+  position: absolute;
+  top:0;
+
+  left: 0;
+  width: 100%;
+}
+.header {
+  display: block;
+  height: 160rpx;
+}
+
+.header image {
+  vertical-align: middle;
+  width: 100%;
+  height: 160rpx;
+}
+
+.tips {
+  background: #f0eff5;
+  color: #93a3a9;
+  font-size: 22rpx;
+  padding: 10rpx 40rpx;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+.tips text {
+  display: block;
+}
+
+.title_header {
+  width: 100%;
+  overflow: hidden;
+  padding: 14rpx 40rpx;
+  background: #f4f6f6;
+  color: #666;
+  box-sizing: border-box;
+}
+
+.title_header .title_content {
+  width: 40%;
+  font-size: 12px;
+}
+
+.title_header .title_content.title_content_two_line {
+  width: 30%;
+}
+ .scrollBar{
+  position:absolute;
+  top:300rpx;
+  bottom: 0; 
+  width: 100%; 
+  overflow: hidden;
+}
+.scrollBarInner{
+  height: 100%;
+  overflow: hidden; 
+}
+scroll-view{ 
+  height: 100%;
+  width: 100%;
+}
+.priceList-item {
+  width: 100%;
+  text-align: left;
+  padding: 37rpx 37rpx;
+  border-bottom: #eee 1px solid;
+  color: #666;
+  box-sizing: border-box;
+}
+
+.priceList-item::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.priceList-item .title_content:first-child {
+  width: 40%;
+}
+
+.title_content {
+  float: left;
+  width: 30%;
+  line-height: 1.3;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.flag {
+  width: 80rpx;
+  height: 60rpx;
+  float: left;
+  margin: 0 20rpx 0 0;
+}
+
+.name {
+  margin: 0 0 0 110rpx;
+}
+
+.graytext {
+  color: #ccc;
+}
+
+.darkgray {
+  color: #222;
+  font-weight: bold;
+}
+.loading{
+  padding: 40rpx;
+  text-align: center;
+  font-size: 36rpx;
+}

@@ -1,0 +1,35 @@
+{
+  "pages": [
+     "pages/exchangeCal/exchangeCal",
+     "pages/price/price", 
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f25050",
+    "navigationBarTitleText": "中国银行",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": "true" 
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "#f25050",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "pagePath": "pages/exchangeCal/exchangeCal",
+        "text": "换算",
+        "iconPath": "dist/image/iconCalculator.png",
+        "selectedIconPath": "dist/image/iconCalculatorSelected.png"
+      },
+      {
+        "pagePath": "pages/price/price",
+        "text": "牌价",
+        "iconPath": "dist/image/iconListprice.png",
+        "selectedIconPath": "dist/image/iconListpriceSelected.png"
+      }
+    ]
+  }
+}

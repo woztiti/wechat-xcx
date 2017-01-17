@@ -1,0 +1,46 @@
+<view class='index'>
+  <view class="top">
+    <view class="header">
+      <image src="../../dist/image/banner.png"></image>
+    </view>
+    <view class="tips">
+      <text>牌价仅供参考，交易时以实际成交牌价为准。</text>
+      <text>单位为100外币换算人民币。</text>
+    </view>
+    <view class="title_header">
+      <view class='title_content'>货币名称</view>
+      <view class='title_content title_content_two_line'>银行卖出价</view>
+      <view class='title_content title_content_two_line'>银行买入价</view>
+    </view>
+  </view>
+  <block wx:if="{{priceList.length==0}}">
+    <loading hidden="{{hiddenLoading}}">正在加载</loading>
+  </block>
+  <block wx:else>
+    <view class="scrollBar">
+      <view class="scrollBarInner">
+        <scroll-view scroll-y="true" bindscroll="scroll" bindscrolltolower="scrolltolower">
+          <view class="priceList">
+            <block wx:for="{{priceList}}" wx:for-index="priceListIndex" wx:for-item="priceListItem">
+              <navigator url="../../pages/exchangeCal/exchangeCal" open-type="switchTab" class="priceList-item" redirect="true">
+                <view class="title_content">
+                  <image class="flag" src="{{priceListItem.imageurl}}"></image>
+                  <view class="darkgray">{{priceListItem.curCodeChinese}}</view>
+                  <view class="graytext">{{priceListItem.curCode}}</view>
+                </view>
+                <view class="title_content">
+                  <view>汇 {{priceListItem.sellRate}}</view>
+                  <view>钞 {{priceListItem.sellNoteRate}}</view>
+                </view>
+                <view class="title_content">
+                  <view>汇 {{priceListItem.buyRate}}</view>
+                  <view>钞 {{priceListItem.buyNoteRate}}</view>
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </block>
+</view>
